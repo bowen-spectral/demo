@@ -282,16 +282,16 @@ task("claim_bounty", "Claim bounty")
     const CONTRACT_ADDRESS = fs.readFileSync('./artifacts/.env_contract', 'utf-8');
     const contract = await BountyManagerV2.attach(CONTRACT_ADDRESS);
 
-    const wallet_raw = new hre.ethers.Wallet(process.env.PRIVATE_KEY);
-    const wallet = wallet_raw.connect(provider);
+    //const wallet_raw = new hre.ethers.Wallet(process.env.PRIVATE_KEY);
+    //const wallet = wallet_raw.connect(provider);
 
-    const write_contract = contract.connect(wallet);
+    //const write_contract = contract.connect(wallet);
 
     //console.log([arg0, arg1, arg2]);
-    console.log("Paying " + taskArgs.payment);
-    console.log("With balance");
-    balance = await provider.getBalance(taskArgs.payment);
-    console.log(ethers.utils.formatEther(balance));
+    //console.log("Paying " + taskArgs.payment);
+    //console.log("With balance");
+    //balance = await provider.getBalance(taskArgs.payment);
+    //console.log(ethers.utils.formatEther(balance));
     
     //arg3[0] = "133";
 
@@ -302,22 +302,22 @@ task("claim_bounty", "Claim bounty")
     //console.log(arg3[index_offset+2]);
     //console.log(arg0, arg1, arg2, arg3);
 
-    tx = await write_contract.collectBounty(taskArgs.payment, arg0, arg1, arg2, arg3);
+    //tx = await write_contract.collectBounty(taskArgs.payment, arg0, arg1, arg2, arg3);
 
-    await write_contract.on("BountyCollected", (x) => {
-      console.log("Collected Bounty: " + (x.toString()));
-    });
+    //await write_contract.on("BountyCollected", (x) => {
+    //  console.log("Collected Bounty: " + (x.toString()));
+    //});
     //console.log(tx);
 
-    console.log("Your Public Key: ");
-    console.log(key.pubKey.rawPubKey);
-    console.log("Your Private Key: ");
-    console.log(key.privKey.rawPrivKey);
+    //console.log("Your Public Key: ");
+    //console.log(key.pubKey.rawPubKey);
+    //console.log("Your Private Key: ");
+    //console.log(key.privKey.rawPrivKey);
     //console.log("Success!");
 
-    balance = await provider.getBalance(taskArgs.payment);
-    console.log("Current Balance");
-    console.log(ethers.utils.formatEther(balance));
+    //balance = await provider.getBalance(taskArgs.payment);
+    //console.log("Current Balance");
+    //console.log(ethers.utils.formatEther(balance));
   });
 
 task("download_dataset", "download dataset")

@@ -6,6 +6,7 @@ yarn-error.log
 eth/.ipynb_checkpoints/demo-checkpoint.ipynb
 artifacts/src/Circuits/lr/lr.zkey
 *.pyc
+*.ptau
 eth/keys/ipfs.json
 eth/keys/.private_key
 artifacts/src/Circuits/lr/lr.wasm
